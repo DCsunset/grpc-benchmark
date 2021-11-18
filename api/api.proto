@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package api;
+option go_package="./api";
+
+service API {
+	rpc Call (Request) returns (Response) {}
+	rpc CallStream (stream Request) returns (stream Response) {}
+}
+
+message Request {
+	string data = 1;
+}
+
+message Response {
+	string data = 1;
+}
